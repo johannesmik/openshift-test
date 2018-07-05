@@ -1,3 +1,4 @@
 flask
-mod_wsgi
 flask_restful
+marshmallow
+mod_wsgi

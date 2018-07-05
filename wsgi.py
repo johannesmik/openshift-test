@@ -2,6 +2,9 @@ from flask import Flask, request
 from flask_restful import Resource, Api
 from marshmallow import Schema, fields, post_load
 
+application = Flask(__name__)
+api = Api(application)
+
 class Text(object):
     def __init__(self, text):
         self.text = text
@@ -19,9 +22,6 @@ class HealthCheck(Resource):
         return 'OK'
 
 api.add_resource(HealthCheck, '/ws/healthz/')
-
-application = Flask(__name__)
-api = Api(application)
 
 @application.route('/')
 def index():

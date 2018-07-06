@@ -31,5 +31,5 @@ def index():
 def textlength():
     text = TextSchema().load(request.get_json()).data
     
-    return "{'success': True, 'textlength': len(text.text) }"
+    return "{'success': True, 'textlength': %d }" % len(text.text) 
 
